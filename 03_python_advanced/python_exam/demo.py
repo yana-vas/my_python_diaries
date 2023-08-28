@@ -1,0 +1,1 @@
+my = [x if x == 'e' else -1for x in 'sometext']
