@@ -3,6 +3,11 @@
 # It could be put outside the class, but it is inside the class where it is applicable
 # To turn a method into a static we add a line with @staticmethod in front of the method header
 
+# Статични методи
+#   -> няма достъп до self
+#   -> нe знае и не трябва да знае нищо, което е свързано с класа
+#   -> може да бъде дефинирано като отделна самостоятелна функция (намира се в класа, защото има някаква логика да е свързано/related с него
+#   -> @staticmethod декоратор превръща метода в статичен (removes self)
 
 class Person:
     def __init__(self, name):
@@ -63,7 +68,7 @@ class Laptop:
 
 
 laptop_for_my_brother = Laptop.low_memory_laptop()
-laptop_for_the_favorite_child_aka_me = Laptop.high_memory_laptop('Mac')
+laptop_for_the_favorite_child_aka_me = Laptop.high_memory_laptop('HP')
 
 
 # Overriding Using Class Methods
