@@ -1,5 +1,5 @@
 class Customer:
-    ID = 1
+    id = 1
 
     def __init__(self, name: str, address: str, email: str):
         self.name = name
@@ -8,13 +8,13 @@ class Customer:
 
     @staticmethod
     def get_next_id():
-        return Customer.ID+1
+        return Customer.id
 
     def __repr__(self):
-        return f"Customer <{Customer.ID}> {self.name}; Address: {self.address}; Email: {self.email}"
+        return f"Customer <{Customer.id}> {self.name}; Address: {self.address}; Email: {self.email}"
 
-    def make_an_appointment(self, app):
-        if id.__repr__() == app:
-            return "get ready!"
+    # def make_an_appointment(self, app):
+    #     if id.__repr__() == app:
+    #         return "get ready!"
 
      
