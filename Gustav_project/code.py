@@ -1,4 +1,18 @@
-from colorama import Fore, Back, Style, init
+def play_sound(sec):
+    import time
+
+    import vlc
+    import sys
+
+    vlc_path = r'C:\Program Files\VideoLAN\VLC'  # modify this path if your VLC is installed elsewhere
+    if vlc_path not in sys.path:
+        sys.path.append(vlc_path)
+
+    sound_file = vlc.MediaPlayer(r"C:\Python\sam.mp3")
+    sound_file.play()
+    time.sleep(sec)
+
+
 import keyboard
 import time
 
@@ -10,34 +24,41 @@ line_number = 0
 char_position = 0
 
 
-def print_line(line):
+def fancy(line):
     for char in line:
         print(char, end='', flush=True)
-        time.sleep(0.007)
+        time.sleep(0.07)
 
+
+# def on_enter(e):
+#     global line_number
+#
+#     if line_number < len(book_lines):
+#         line = book_lines[line_number]
+#
+#         if line.endswith('?'):
+#             print(line + ' (question)')
+#         else:
+#             fancy(line)
+#         line_number += 1
 
 def on_enter(e):
     global line_number
 
     if line_number < len(book_lines):
-        line = book_lines[line_number]
-        if line_number == 10:
-            print("Line 10")
+        line = book_lines[line_number].strip()
 
         if line.endswith('?'):
             print(line + ' (question)')
         else:
-            print_line(line)
-
+            fancy(line)
         line_number += 1
+    else:
+        print("End of the book.")
+        keyboard.unhook_all()
 
 
-# Add a hook for the 'enter' key
+# print(book_lines[line_number][char_position], end='', flush=True)  # Print the first character of the book
+
 keyboard.on_press_key('enter', on_enter)
-
-# Print the first character of the book
-print(book_lines[line_number][char_position], end='', flush=True)
-
-# Start a blocking event loop
-keyboard.wait()
-
+keyboard.wait('esc')  # end the loop when 'esc' is pressed

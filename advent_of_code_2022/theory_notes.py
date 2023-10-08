@@ -10,7 +10,7 @@ list2 = [1,0,9,7,6]
 check = any(element in list2 for element in list1)
 
 
-# Directons in matrix - UP DOWN LEFT RIGHT (see more on advent_of_code/008_day_eight/theory.py)
+# Directons in matrix - UP DOWN LEFT RIGHT (see more on advent_of_code_2022/008_day_eight/theory.py)
 
 #         for x in range(c - 1, -1, -1):
 #             L += 1
