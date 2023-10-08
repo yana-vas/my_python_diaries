@@ -2,7 +2,7 @@ grid = [list(line) for line in open('example_matrix.txt').read().splitlines()]
 commands = open('example.txt').read().splitlines()
 
 # grid = [list(line) for line in open('matrix.txt').read().splitlines()]
-# commands = open('input_data.txt').read().splitlines()
+# commands = open('input_data.txt.txt').read().splitlines()
 
 s_row = H_row = T_row = 4
 s_cow = H_col = T_col = 0
